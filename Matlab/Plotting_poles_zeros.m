@@ -31,7 +31,11 @@ time = 0:0.05:5; % time samples (initial_time:time_spacing:final_time
 [xout, t] = step(sys,time);
 
 figure(2)
-plot(t,xout)
+plot(t,xout,'red','LineWidth',2)
+ax=gca;
+ax.FontSize=16;
+grid on
+box off
 title('Step Response')
-xlabel('Time (s)')
-ylabel('Position (m)')
+xlabel('Time (s)','FontSize',22)
+ylabel('Position (m)','FontSize',22)
