@@ -21,7 +21,15 @@ sys = tf(num,den);
 
 % The poles and zeros for this can be plotted using the pzmap() function
 figure(1)
-pzmap(sys)
+pzplot(sys)
+ax=gca;
+ax.FontSize=16;
+xlabel('Real Axis','FontSize',22)
+ylabel('Imag. Axis','FontSize',22)
+% Best (only?) way to change marker size for pzmap()
+hm = findobj(gca, 'Type', 'Line');          % Handle To 'Line' Objects
+hm(2).MarkerSize = 10;                      % ?Zero? Marker
+hm(3).MarkerSize = 10;                      % ?Pole? Marker
 grid off
 
 % Now let's plot the time response to a step input (or step response)
